@@ -29,10 +29,10 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('sending');
-    setMessage(null); // Limpiar mensajes anteriores
+    setMessage(null); 
 
-    // ¡REEMPLAZA ESTA URL CON LA URL DE TU FORMULARIO DE FORMSPREE!
-    const formspreeUrl = 'https://formspree.io/f/xrbavyvn'; // Ejemplo: https://formspree.io/f/xyyqgqjk
+   
+    const formspreeUrl = 'https://formspree.io/f/xrbavyvn'; 
 
     try {
       const response = await fetch(formspreeUrl, {
@@ -47,7 +47,7 @@ export default function ContactForm() {
       if (response.ok) {
         setStatus('success');
         setMessage('¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.');
-        setForm({ // Limpiar el formulario después del envío exitoso
+        setForm({ 
           nombre: '',
           apellido: '',
           email: '',
@@ -56,7 +56,7 @@ export default function ContactForm() {
       } else {
         const data = await response.json();
         setStatus('error');
-        // Formspree a veces devuelve un objeto 'errors' con mensajes
+       
         setMessage(data.errors ? data.errors.map((err: any) => err.message).join(', ') : 'Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo.');
       }
     } catch (error) {
@@ -76,7 +76,7 @@ export default function ContactForm() {
             placeholder="Nombre"
             onChange={handleChange}
             value={form.nombre}
-            required // Añadimos 'required' para validación básica HTML5
+            required 
           />
           <input
             name="apellido"
@@ -105,7 +105,7 @@ export default function ContactForm() {
             {status === 'sending' ? 'Enviando...' : 'Enviar'}
           </button>
 
-          {/* Mensajes de estado */}
+          
           {message && (
             <p className={`form-status-message ${status}`}>
               {message}
