@@ -76,7 +76,7 @@ const contenido = {
 
   regulacion: {
     titulo: "Estamos regulados por la CNV",
-    descripcion: "Estamos registrados bajo la matrícula N°2667 en la Comisión Nacional de Valores (CNV)",
+    descripcion: "Estamos registrados como agente productor jurídico bajo el número 2667 en la Comisión Nacional de Valores (CNV) de Argentina."
 
   },
 
