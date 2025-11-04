@@ -1,50 +1,41 @@
-# React + TypeScript + Vite
+1️⃣ Ir a la carpeta del proyecto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+En la terminal:
 
-Currently, two official plugins are available:
+cd ruta/donde/clonaste/el/proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+Por ejemplo:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+cd C:\Proyectos\MiAppViteReact
 
-- Configure the top-level `parserOptions` property like this:
+2️⃣ Verificar que tengas Node instalado
+node -v
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Si no te devuelve nada o sale error, tenés que instalar Node.js LTS desde la web oficial.
+Ideal que sea versión 18 o superior.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+3️⃣ Instalar dependencias
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+En la raíz del proyecto (donde está package.json):
+
+npm install
+
+
+🔹 Esto baja todo lo que el proyecto necesita (incluido Vite, React, @vitejs/plugin-react, etc.).
+🔹 Hacelo una sola vez después de clonar.
+
+Si el proyecto usa otro manejador de paquetes y ves alguno de estos archivos:
+
+yarn.lock → usarías yarn install
+
+pnpm-lock.yaml → usarías pnpm install
+
+Pero si no sabés, npm install suele estar perfecto.
+
+4️⃣ Levantar el servidor de desarrollo
+
+Una vez terminado el npm install:
+
+npm run dev
