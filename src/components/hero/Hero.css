@@ -1,0 +1,86 @@
+.hero-section {
+  /* Imagen de fondo */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Overlay oscuro para legibilidad */
+                    url('https://placehold.co/1920x1080/003366/FFFFFF?text=Hero+Background'); /* ¡Reemplaza esta URL con tu imagen! */
+  background-size: cover; /* Cubre toda la sección */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  color: #fff; /* Cambia el color del texto a blanco para contraste */
+
+  padding: 8rem 0; /* Aumenta el padding para dar más espacio */
+  text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  display: flex; /* Usamos flexbox para centrar el contenido verticalmente */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  min-height: 500px; /* Altura mínima para que la imagen se vea bien */
+}
+
+.hero-section .container {
+  max-width: 800px; /* Limita el ancho del contenido para mejor lectura */
+  padding: 0 1.5rem; /* Añade padding horizontal para móviles */
+}
+
+.hero-section h1 {
+  font-size: 3.5rem; /* Aumenta el tamaño del título */
+  font-weight: 700;
+  color: #fff; /* Título blanco */
+  margin-bottom: 1.5rem; /* Más espacio debajo del título */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejor legibilidad */
+}
+
+.hero-section p {
+  font-size: 1.35rem; /* Aumenta el tamaño de la descripción */
+  color: #f0f0f0; /* Color ligeramente gris para la descripción */
+  margin-bottom: 2.5rem; /* Más espacio debajo de la descripción */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra para mejor legibilidad */
+  line-height: 1.6; /* Mejora la legibilidad */
+}
+
+.hero-section a {
+  background-color: #003366;
+  color: #fff;
+  padding: 1rem 2.5rem; /* Más padding para el botón */
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Añade transición para transform */
+  display: inline-block; /* Asegura que el padding funcione correctamente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para el botón */
+}
+
+.hero-section a:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px); /* Pequeño efecto de elevación al pasar el ratón */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada al pasar el ratón */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 6rem 0; /* Ajusta el padding para pantallas más pequeñas */
+    min-height: 400px; /* Altura mínima para móviles */
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem; /* Reduce el tamaño del título en móviles */
+  }
+
+  .hero-section p {
+    font-size: 1.1rem; /* Reduce el tamaño de la descripción en móviles */
+  }
+
+  .hero-section a {
+    padding: 0.8rem 2rem; /* Ajusta el padding del botón en móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 2rem; /* Más reducción para pantallas muy pequeñas */
+  }
+
+  .hero-section p {
+    font-size: 1rem; /* Más reducción para pantallas muy pequeñas */
+  }
+}

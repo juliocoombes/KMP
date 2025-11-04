@@ -1,0 +1,86 @@
+.business-section {
+  padding: 40px 16px;
+  background-color: #ffffff;
+  font-family: 'Helvetica', sans-serif;
+}
+
+.section-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 32px;
+  color: #000;
+}
+
+.business-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.business-card {
+  background: linear-gradient(180deg, #103166 0%, #000000 100%);
+  color: white;
+  padding: 24px;
+  border-radius: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.business-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.business-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.business-card ul {
+  padding-left: 20px;
+}
+
+.business-card li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* MEDIA QUERY para pantallas grandes (desktop/tablet) */
+@media (min-width: 768px) {
+  .business-section {
+    padding: 80px 20px;
+  }
+
+  .section-title {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+
+  .business-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+  }
+
+  .business-card {
+    flex: 1 1 400px;
+    max-width: 500px;
+    padding: 32px;
+    border-radius: 20px;
+  }
+
+  .business-card h3 {
+    font-size: 24px;
+  }
+
+  .business-card p {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}

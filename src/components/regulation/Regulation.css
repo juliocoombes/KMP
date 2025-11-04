@@ -1,0 +1,81 @@
+/* Regulation.css */
+
+/* Variables de color (asumiendo que están definidas en un archivo global o importadas) */
+/* Si no están en un archivo global, deberías copiarlas aquí o importarlas */
+:root {
+  --color-darkblue: #192339;
+  --color-navy: #103166;
+  --color-primary: #2A5597;
+  --color-secondary: #6395C4;
+  --color-accent: #91B0D4;
+  --color-grayish: #D9D9DB;
+}
+
+.regulation-section {
+  background-color: #f6f6f6; /* Fondo claro similar a otras secciones */
+  padding: 4rem 1.5rem; /* Espaciado vertical y horizontal */
+  text-align: center;
+  font-family: 'Montserrat', sans-serif; /* Usando Montserrat como en el Navbar */
+  color: var(--color-darkblue); /* Color de texto principal */
+}
+
+.regulation-section h2 {
+  font-size: 2.5rem; /* Tamaño de fuente para títulos */
+  font-weight: 700; /* Negrita */
+  color: var(--color-navy); /* Color de título más oscuro */
+  margin-bottom: 1.5rem; /* Espacio debajo del título */
+  line-height: 1.2; /* Altura de línea para mejor legibilidad */
+}
+
+.regulation-section p {
+  font-size: 1.1rem; /* Tamaño de fuente para párrafos */
+  color: #333; /* Color de texto para párrafos */
+  max-width: 800px; /* Limita el ancho del párrafo para mejor lectura */
+  margin: 0 auto 2.5rem auto; /* Centra el párrafo y añade margen inferior */
+  line-height: 1.6; /* Altura de línea para mejor legibilidad */
+}
+
+.regulation-section img {
+  height: 80px; /* Ajusta la altura de la imagen (h-16 en Tailwind es ~64px, lo aumentamos un poco) */
+  width: auto; /* Mantiene la proporción de la imagen */
+  display: block; /* Asegura que la imagen sea un bloque para centrar con margin: auto */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
+  opacity: 0.8; /* Opcional: un poco de transparencia para integrarse mejor */
+  transition: opacity 0.3s ease; /* Transición suave al interactuar */
+}
+
+.regulation-section img:hover {
+  opacity: 1; /* Opacidad completa al pasar el ratón */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .regulation-section {
+    padding: 3rem 1rem; /* Reduce el padding en pantallas pequeñas */
+  }
+
+  .regulation-section h2 {
+    font-size: 2rem; /* Reduce el tamaño del título */
+    margin-bottom: 1rem;
+  }
+
+  .regulation-section p {
+    font-size: 1rem; /* Reduce el tamaño del párrafo */
+    margin-bottom: 2rem;
+  }
+
+  .regulation-section img {
+    height: 60px; /* Ajusta la altura de la imagen en móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .regulation-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .regulation-section p {
+    font-size: 0.95rem;
+  }
+}

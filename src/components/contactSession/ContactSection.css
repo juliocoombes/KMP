@@ -1,0 +1,300 @@
+/* ----- Layout base ----- */
+.contact-section {
+  position: relative;
+  width: 100%;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr; /* info | form */
+  gap: 32px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* ----- Form en desktop ----- */
+.form-container {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  width: 100%;
+  box-sizing: border-box; /* 🔧 evita desbordes */
+}
+
+/* En desktop ignoramos .hidden-mobile/.visible */
+@media (min-width: 769px) {
+  .form-container.hidden-mobile,
+  .form-container.visible {
+    display: block;
+    position: static;
+    transform: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+
+  .toggle-form-button {
+    display: none !important;
+  }
+}
+
+/* ----- Botón flotante en mobile ----- */
+.toggle-form-button {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1001;
+  border: none;
+  padding: 14px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  background: #91B0D4;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+}
+
+/* ----- Sheet del formulario en mobile ----- */
+@media (max-width: 768px) {
+  .contact-content {
+    display: block;
+    padding: 0; /* que el sheet abarque full width */
+  }
+
+  /* Ocultar cuando está cerrado en mobile */
+  .form-container.hidden-mobile {
+    display: none;
+  }
+
+  /* Sheet abierto */
+  .form-container.visible {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1002;
+    padding: 20px 16px max(24px, env(safe-area-inset-bottom) + 16px);
+    border-radius: 20px 20px 0 0;
+    border: 1px solid rgba(0,0,0,0.06);
+    background: #fff;
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.22);
+    transform: translateY(0);
+    animation: sheet-in 220ms ease-out;
+  }
+
+  @keyframes sheet-in {
+    from { transform: translateY(24px); opacity: 0; }
+    to   { transform: translateY(0);   opacity: 1; }
+  }
+
+  /* Título del form dentro del sheet */
+  .form-container .form-title {
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+/* ----- Estética del formulario ----- */
+.contact-form-section {
+  width: 100%;
+  box-sizing: border-box; /* 🔧 evita desbordes */
+}
+
+.form-wrapper {
+  width: 100%;
+  box-sizing: border-box; /* 🔧 */
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box; /* 🔧 */
+}
+
+.form input,
+.form textarea,
+.form button[type="submit"] {
+  display: block;
+  width: 100%;            /* 🔧 mismo ancho para todos */
+  box-sizing: border-box; /* 🔧 padding/border dentro del ancho */
+}
+
+.form input,
+.form textarea {
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 12px;
+  padding: 14px 14px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+  background: #fff;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: #103166;
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.06);
+}
+
+.form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form button[type="submit"] {
+  margin-top: 4px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: none;
+  background: #103166;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 80ms ease, opacity 120ms ease, background 160ms ease;
+}
+
+.form button[type="submit"]:hover {
+  background: #2A5597;
+}
+
+.form button[disabled] {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.form-status-message {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.form-status-message.success { color: #137333; }
+.form-status-message.error   { color: #c5221f; }
+
+/* ----- ContactInfo con imagen de fondo ----- */
+.contact-info {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  min-height: 420px;
+  background: #f7f7f7;
+}
+
+.background-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.9);
+  transform: scale(1.02);
+  pointer-events: none;
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 1;
+  padding: 40px;
+  color: #103166;
+  max-width: 720px;
+}
+
+.content-overlay h2 {
+  font-size: 32px;
+}
+
+/* Título similar al mock */
+.content-overlay .title {
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 8px 0 28px;
+}
+
+/* Bloque de líneas de contacto */
+.info-block {
+  display: grid;
+  gap: 8px;
+  font-size: 18px;
+}
+
+.info-line {
+  color: #103166;
+  text-decoration: none;
+}
+
+.info-line:hover {
+  text-decoration: underline;
+}
+
+/* Iconos sociales */
+.social-icons {
+  display: flex;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.social-icons a {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.8);
+  color: #103166;
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-2px);
+  background: #fff;
+}
+
+/* Legibilidad del texto sobre imagen */
+.contact-info::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.75) 30%, rgba(255,255,255,0.6) 100%);
+  z-index: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-overlay {
+    padding: 24px 16px 120px; /* deja espacio al botón flotante */
+  }
+  .content-overlay .title {
+    margin-bottom: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .sheet-close-button {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    z-index: 1003;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.06);
+    color: #103166;
+    font-size: 22px;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.08s ease;
+  }
+  .sheet-close-button:hover { background: rgba(0,0,0,0.12); }
+  .sheet-close-button:active { transform: scale(0.96); }
+  .sheet-close-button:focus-visible {
+    outline: 2px solid #2A5597;
+    outline-offset: 2px;
+  }
+}
