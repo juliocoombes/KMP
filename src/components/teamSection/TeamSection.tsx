@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 import contenido from '../../data/contenido';
 import './TeamSection.css';

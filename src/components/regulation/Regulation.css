@@ -15,7 +15,7 @@
   background-color: #f6f6f6; /* Fondo claro similar a otras secciones */
   padding: 4rem 1.5rem; /* Espaciado vertical y horizontal */
   text-align: center;
-  font-family: 'Montserrat', sans-serif; /* Usando Montserrat como en el Navbar */
+  font-family: 'Helvetica', sans-serif; /* Usando Montserrat como en el Navbar */
   color: var(--color-darkblue); /* Color de texto principal */
 }
 

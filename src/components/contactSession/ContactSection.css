@@ -1,4 +1,6 @@
-/* ----- Layout base ----- */
+*{ 
+  font-family: 'Helvetica', sans-serif;
+}
 .contact-section {
   position: relative;
   width: 100%;

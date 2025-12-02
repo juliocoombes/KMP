@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './Footer.css';
 import contenido from '../../data/contenido';
 

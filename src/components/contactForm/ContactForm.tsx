@@ -32,7 +32,7 @@ export default function ContactForm() {
     setMessage(null); 
 
    
-    const formspreeUrl = 'https://formspree.io/f/xrbavyvn'; 
+    const formspreeUrl = "https://formspree.io/f/mdkpqydp"; 
 
     try {
       const response = await fetch(formspreeUrl, {

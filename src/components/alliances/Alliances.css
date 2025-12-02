@@ -2,7 +2,7 @@
   background-color: white;
   padding: 5rem 0;
   text-align: center;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Helvetica', sans-serif;
 }
 
 .alliances-section h2 {
@@ -19,16 +19,32 @@
   gap: 3rem;
   padding: 0 2rem;
 }
+
+.alliances-grid .logo-box {
+  width: 160px;          /* todos ocupan el mismo espacio */
+  height: 100px;         /* controla la altura visual */
+  display: flex;
+  align-items: center;   /* centra verticalmente */
+  justify-content: center; /* centra horizontalmente */
+  background: white;     /* o transparente */
+  border-radius: 8px;
+}
+
 .alliances-grid img {
-  max-height: 4rem;   /* controla altura máxima */
-  max-width: 10rem;     /* evita que algunos logos sean demasiado anchos */
-  width: auto;          /* mantiene proporción */
-  object-fit: contain;  /* asegura que se vea completo dentro del box */
-  filter: #103166;
-  transition: filter 0.3s, transform 0.3s;
+  max-width: 100%;
+  max-height: 80%;
+  object-fit: contain;
+  transition: transform 0.3s;
 }
 
 .alliances-grid img:hover {
-  filter: grayscale(0%);
   transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+  .alliances-grid img {
+    width: 120px;
+    height: 60px;
+  }
 }

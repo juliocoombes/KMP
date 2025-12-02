@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import ContactInfo from "../contactInfo/ContactInfo";
 import ContactForm from '../contactForm/ContactForm';
 import './ContactSection.css';

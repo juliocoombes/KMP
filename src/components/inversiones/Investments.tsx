@@ -1,5 +1,5 @@
-import React from 'react';
-import './Investments.css';
+
+/*import './Investments.css';
 import ContactSection from '../contactSession/ContactSection';
 import contenido from '../../data/contenido';
 
@@ -28,4 +28,4 @@ export default function Investments() {
       <ContactSection />
     </section>
   );
-}
+}*/

@@ -1,8 +1,9 @@
-import React from 'react';
+
 import './Navbar.css'; 
+import contenido from '../../data/contenido';
 import logo from "../../assets/KMP2.png"; // Adjust the path as necessary
 import { useState } from 'react';
-
+const  {cta}  = contenido.hero;
 export default function Navbar() {
   const [menuAbierto, setMenuAbierto] = useState(false);
 
@@ -25,7 +26,7 @@ export default function Navbar() {
         <a href="/services">Servicios</a>
       
         <a href="/aboutUs" className="navbar-divider">Nosotros</a>
-        <a href="https://wa.link/..." className="cta-button">Contactar</a>
+         <a href={cta.link} className="cta-button">Contactar</a>
       </div>
     </nav>
   );

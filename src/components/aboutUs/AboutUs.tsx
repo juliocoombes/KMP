@@ -1,4 +1,4 @@
-import React from 'react';
+
 import ContactSection from '../contactSession/ContactSection';
 import './AboutUs.css';
 import TeamSection from '../teamSection/TeamSection';

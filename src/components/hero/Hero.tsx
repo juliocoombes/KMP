@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './Hero.css';
 import contenido from '../../data/contenido';
 import heroBackground from '../../assets/Imagen de WhatsApp 2025-07-09 a las 13.37.27_3bd0fa63.jpg'; // Adjust the path as necessary

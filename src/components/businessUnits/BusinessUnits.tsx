@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './BusinessUnits.css';
 import contenido from '../../data/contenido';
 

@@ -29,7 +29,7 @@
 }
 
 .logo-text-light {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Helvetica', sans-serif;
   font-weight: 300;
   font-size: 0.7rem;
   letter-spacing: 4px;
@@ -52,7 +52,7 @@
 }
 
 .navbar-right a {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Helvetica', sans-serif;
   font-weight: 500;
   font-size: 1rem;
   color: var(--color-darkblue);

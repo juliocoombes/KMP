@@ -1,6 +1,6 @@
-import React from 'react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import '../contactSession/ContactSection.css';
 import logo from '../../assets/cuaderno kmp.png';
 import contenido from '../../data/contenido';
@@ -18,9 +18,6 @@ export default function ContactInfo() {
         <p>Teléfono: {contacto.telefono}</p>
         <p>Horario: {contacto.horario}</p>
         <div className="social-icons">
-          <a href={contacto.redes.facebook} target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faFacebook} />
-          </a>
           <a href={contacto.redes.instagram} target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faInstagram} />
           </a>
