@@ -5,7 +5,7 @@ import './Alliances.css';
 import contenido from '../../data/contenido';
 import pershing from '../../assets/pershing.png';
 import stonex from '../../assets/stonex.png';
-import balanzi from '../../assets/balanzi.png';
+import balanzi from '../../assets/balanzI.png';
 import interactive from '../../assets/interactiveBrokers.png';
 import balanz3 from '../../assets/Balanz3.jpg';
 import inviu from '../../assets/inviu.png';
