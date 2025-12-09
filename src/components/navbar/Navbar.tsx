@@ -1,9 +1,11 @@
-
-import './Navbar.css'; 
+import './Navbar.css';
 import contenido from '../../data/contenido';
-import logo from "../../assets/KMP2.png"; // Adjust the path as necessary
+import logo from "../../assets/KMP2.png";
 import { useState } from 'react';
-const  {cta}  = contenido.hero;
+import { Link } from 'react-router-dom';
+
+const { cta } = contenido.hero;
+
 export default function Navbar() {
   const [menuAbierto, setMenuAbierto] = useState(false);
 
@@ -12,7 +14,9 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo-container">
-        <a href='/'><img src={logo} alt="Logo" className="navbar-logo" /></a>
+        <Link to="/">
+          <img src={logo} alt="Logo" className="navbar-logo" />
+        </Link>
       </div>
 
       <div className="hamburger" onClick={toggleMenu}>
@@ -22,11 +26,16 @@ export default function Navbar() {
       </div>
 
       <div className={`navbar-right ${menuAbierto ? 'active' : ''}`}>
-         <span className="close-menu" onClick={toggleMenu}>&times;</span>
-        <a href="/services">Servicios</a>
-      
-        <a href="/aboutUs" className="navbar-divider">Nosotros</a>
-         <a href={cta.link} className="cta-button">Contactar</a>
+        <span className="close-menu" onClick={toggleMenu}>&times;</span>
+
+        <Link to="/services">Servicios</Link>
+
+        <Link to="/aboutUs" className="navbar-divider">Nosotros</Link>
+
+        {/* CTA puede quedar como <a> porque apunta a un link externo o ancla */}
+        <a href={cta.link} className="cta-button">
+          Contactar
+        </a>
       </div>
     </nav>
   );
